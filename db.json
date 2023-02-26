@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "Yeşil Peri Gecesi",
+      "author": "Ayfer Tunç",
+      "publisher": "Can Yayınları",
+      "isbn": "1212435536",
+      "price": 29.9,
+      "categoryId": "1"
+    },
+    {
+      "id": "2",
+      "name": "İnce Mehmet",
+      "author": "Yaşar Kemal",
+      "publisher": "Can Yayınları",
+      "isbn": "121243987",
+      "price": 69.9,
+      "categoryId": "1"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Roman"
+    },
+    {
+      "id": "2",
+      "name": "Şiir"
+    }
+  ]
+}
