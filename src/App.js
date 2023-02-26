@@ -16,9 +16,14 @@ import ListCategories from "./pages/ListCategories";
 
 import AddCategory from "./pages/AddCategory";
 
+import EditCategory from "./pages/EditCategory";
+
 import { useDispatch, useSelector } from "react-redux";
+
 import actionTypes from "./redux/actions/actionTypes";
+
 import api from "./api/api";
+
 import urls from "./api/urls";
 
 function App() {
@@ -67,12 +72,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/book-detail/:bookId" element={<BookDetail/>} />
-        <Route path="/add-book" element={<AddBook/>} />
-        <Route  path="/edit-book/:bookId" element={<EditBook/>} />
-        <Route path="/list-categories" element={<ListCategories/>} />
-        <Route path="/add-category" element={<AddCategory/>} />
-        <Route path="*" element={<Error/>} />
+        <Route path="/book-detail/:bookId" element={<BookDetail />} />
+        <Route path="/add-book" element={<AddBook />} />
+        <Route path="/edit-book/:bookId" element={<EditBook />} />
+        <Route path="/list-categories" element={<ListCategories />} />
+        <Route path="/add-category" element={<AddCategory />} />
+        <Route path="/edit-category/:categoryId" element={<EditCategory />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
