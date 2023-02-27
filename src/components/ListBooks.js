@@ -9,6 +9,8 @@ import actionTypes from "../redux/actions/actionTypes";
 import CustomModal from "./CunstomModal";
 import { Link } from "react-router-dom";
 
+
+
 const ListBooks = () => {
   const { booksState, categoriesState } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ const ListBooks = () => {
         item.author.toLowerCase().includes(searchText.toLowerCase()) === true
     );
     setFilteredBooks(temp);
-  }, [searchText,booksState.books]);
+  }, [searchText, booksState.books]);
 
   const deleteBook = (id) => {
     dispatch({ type: actionTypes.bookActions.DELETE_BOOK_START });
@@ -45,7 +47,7 @@ const ListBooks = () => {
   };
 
   return (
-    <div className=" my-5" >
+    <div className=" my-5">
       <div className="d-flex justify-content-center w-75">
         <input
           className="form-control w-75"
@@ -55,23 +57,20 @@ const ListBooks = () => {
           onChange={(event) => setSearchText(event.target.value)}
         />
       </div>
-     {
-      categoriesState.categories.lenght === 0 ? (
+      {categoriesState.categories.lenght === 0 ? (
         <div className="d-flex justify-content-end">
-        <Link to={"/add-category"} className="btn btn-primary">
-      Öncelikle Kategori Eklenmeli
-        </Link>
-      </div>
-      ):(
+          <Link to={"/add-category"} className="btn btn-primary">
+            Öncelikle Kategori Eklenmeli
+          </Link>
+        </div>
+      ) : (
         <div className="d-flex justify-content-end">
-        <Link to={"/add-book"} className="btn btn-primary">
-          Kitap Ekle
-        </Link>
-      </div>
-      )
+          <Link to={"/add-book"} className="btn btn-primary">
+            Kitap Ekle
+          </Link>
+        </div>
+      )}
 
-     }
-      
       <table className="table table-striped ">
         <thead>
           <tr>
@@ -93,6 +92,7 @@ const ListBooks = () => {
                 <td>{book.name}</td>
                 <td>{book.author}</td>
                 <td>{myCategory.name}</td>
+
                 <td>
                   <button
                     onClick={() => {

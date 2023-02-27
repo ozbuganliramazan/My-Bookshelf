@@ -13,6 +13,9 @@ import urls from "../api/urls";
 
 import actionTypes from "../redux/actions/actionTypes";
 
+import { upperFirstLetters } from "../utils/Functions";
+
+
 const ListCategories = () => {
   const dispatch = useDispatch();
   const { categoriesState, booksState } = useSelector((state) => state);
@@ -68,8 +71,8 @@ const ListCategories = () => {
 
                   return (
                     <tr key={category.id}>
-                      <th scope="row">{index + 1} </th>
-                      <td>{category.name} </td>
+                      <th scope="row">{index+ 1} </th>
+                      <td> {upperFirstLetters(category.name)} </td>
                       <td>{books.length} </td>
                       <td>
                         <button
@@ -89,8 +92,11 @@ const ListCategories = () => {
                         </Link>
                       </td>
                     </tr>
+                    
                   );
+              
                 })}
+                
               </>
             )}
           </tbody>

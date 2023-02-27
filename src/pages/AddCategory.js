@@ -8,6 +8,8 @@ import actionTypes from "../redux/actions/actionTypes";
 
 import { useNavigate } from "react-router-dom";
 
+
+
 import api from "../api/api";
 import urls from "../api/urls";
 
@@ -65,6 +67,7 @@ const AddCategory = () => {
               onChange={(event) =>
                 setForm({ ...form, name: event.target.value })
               }
+            
             />
           </div>
           <div className="d-flex justify-content-center my-5">
